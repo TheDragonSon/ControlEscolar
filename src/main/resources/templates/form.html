@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="sp" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/static/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+</head>
+<body background="">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Escuela</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a th:href="@{/form}">Iniciar Sesión</a></li>
+            <li class="active"><a th:href="@{/listar}">Abrir Cuenta</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="parent">
+        <form class="form-signin form-login">
+            <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
+            <br>
+            <input type="text" class="form-control" name="username" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
+            <br>
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required="" autofocus="" />
+            <br>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" required=""/>
+            <br>
+            <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required=""/>
+            <br>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" onClick="comprobarClave()" type="submit">Abrir Cuenta</button>
+        </form>
+    </div>
+</div>
+</body>
+
+<script>
+    function comprobarClave(){
+        password1 = document.getElementById("password").value;
+        password2 = document.getElementById("password2").value;
+
+        if (password1 == password2)
+            return null;
+        else
+            alert("Las contraseñas son diferentes, por favor compruebelas")
+    }
+</script>
+</html>
