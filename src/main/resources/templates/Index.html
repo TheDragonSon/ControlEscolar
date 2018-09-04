@@ -6,14 +6,14 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="UTF-8">
 </head>
-<body background="escuela.jpg">
+<body th:background="@{/static/img/escuela/}">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a th:href="@{/listar}">Iniciar Sesión</a></li>
+            <li class="active"><a th:href="@{/index}">Iniciar Sesión</a></li>
             <li><a th:href="@{/form}">Abrir Cuenta</a></li>
         </ul>
     </div>
