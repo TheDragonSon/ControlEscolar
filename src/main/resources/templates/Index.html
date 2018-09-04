@@ -3,26 +3,39 @@
 <head>
     <!--Estas son las librerias de CSS y BOOTSTRAP -->
     <link rel="stylesheet" th:href="@{/static/css/style.css}"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="UTF-8">
 </head>
 <body th:background="@{/static/img/escuela}">
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
+
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hamburg">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a th:href="@{/index}">Iniciar Sesión</a></li>
-            <li><a th:href="@{/form}">Abrir Cuenta</a></li>
-        </ul>
+
+        <div class="collapse navbar-collapse" id="hamburg">
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/index}">Iniciar Sesión</a></li>
+                <li><a th:href="@{/form}">Abrir Cuenta</a></li>
+            </ul>
+        </div>
     </div>
 </nav>
+
+
 <div class="container">
     <div class="parent">
         <form class="form-signin form-login">
             <h2 class="form-signin-heading">Bienvenido al Control Escolar</h2>
-            <input type="text" class="form-control" name="username" placeholder="ID" required="" autofocus="" />
+            <input type="text" class="form-control" name="username" placeholder="ID" required="" autofocus=""/>
             <input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recordarme
