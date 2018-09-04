@@ -1,15 +1,16 @@
+
+
 package com.escuela.organizacion.Control.Escolar.entity;
 
-import org.hibernate.validator.constraints.Email;
+
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
-import java.io.Serializable;
-
 
 @Entity
-@Table(name = "alumnos")
-public class alumno implements Serializable {
+@Table(name = "materias")
+public class materia {
+
     private static final long serialVersionUID=1L;
 
 
@@ -22,14 +23,14 @@ public class alumno implements Serializable {
     private String nombre;
 
     @NotEmpty
-    private int edad;
+    private int puntos;
 
     @NotEmpty
-    @Email
-    private String email;
+    private String grupo;
 
     @NotEmpty
-    private String observaciones;
+    private long idProfesor;
+
 
 
 

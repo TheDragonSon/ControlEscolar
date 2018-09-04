@@ -1,17 +1,12 @@
 package com.escuela.organizacion.Control.Escolar.entity;
 
-
-import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name = "administrativos")
-public class administrativo {
-
-    private static final long serialVersionUID=1L;
-
+@Table(name = "calificaciones")
+public class calificacion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,17 +14,18 @@ public class administrativo {
 
 
     @NotEmpty
-    private String nombre;
+    private long idalumno;
 
     @NotEmpty
-    private String RFC;
+    private long idgrupo;
 
     @NotEmpty
-    @Email
-    private String email;
+    private String idmateria;
 
     @NotEmpty
-    private String cargo;
+    private int calif;
+
+
 
 
 }
