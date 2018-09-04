@@ -13,40 +13,45 @@
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a th:href="@{/form}">Panel de Información</a></li>
-            <li class="active"><a th:href="@{/listar}">Abrir Cuenta</a></li>
+            <li class="active"><a th:href="@{/listar}">Inicio</a></li>
+            <li><a th:href="@{/form}">Abrir Cuenta</a></li>
+
         </ul>
     </div>
 </nav>
 <div class="container">
-    <div class="parent">
-        <form class="form-signin form-login">
-            <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
-            <br>
-            <input type="text" class="form-control" name="username" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
-            <br>
-            <input type="email" class="form-control" name="email" placeholder="E-mail" required="" autofocus="" />
-            <br>
-            <input type="password" class="form-control" id="password" placeholder="Contraseña" required=""/>
-            <br>
-            <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required=""/>
-            <br>
-            <br>
-            <button class="btn btn-lg btn-primary btn-block" onClick="comprobarClave()" type="submit">Abrir Cuenta</button>
-        </form>
-    </div>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+            <td>@mdo</td>
+        </tr>
+        <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+            <td>@fat</td>
+        </tr>
+        <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+            <td>@twitter</td>
+        </tr>
+        </tbody>
+    </table>
+
 </div>
 </body>
 
-<script>
-    function comprobarClave(){
-        password1 = document.getElementById("password").value;
-        password2 = document.getElementById("password2").value;
-
-        if (password1 == password2)
-            return null;
-        else
-            alert("Las contraseñas son diferentes, por favor compruebelas")
-    }
-</script>
 </html>
