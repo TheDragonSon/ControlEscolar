@@ -20,7 +20,7 @@ public class calificacion {
     private long idgrupo;
 
     @NotEmpty
-    private String materia;
+    private String idmateria;
 
     @NotEmpty
     private int calif;
