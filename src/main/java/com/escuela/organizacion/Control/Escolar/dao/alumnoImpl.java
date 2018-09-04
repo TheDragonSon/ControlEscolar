@@ -20,6 +20,29 @@ public class alumnoImpl {
     }
 
 
+    @Transactional
+    public void save(alumno Alumno) {
+        System.out.println(Alumno.getId());
+        if (Alumno.getId() != null && Alumno.getId() > 0) {
+            em.merge(Alumno);
+
+        } else {
+            em.persist(Alumno);
+        }
+
+
+    }
+
+
+    @Transactional(readOnly = true)
+    public alumno findOneAlumno(Long id) {
+        return em.find(alumno.class, id);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        em.remove(findOneAlumno(id));
+    }
 
 
 

@@ -8,8 +8,8 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class alumnoController {
 
-    @Autowired
-    private IalumnoDao alumnoDao;
+  //  @Autowired
+   // private IalumnoDao alumnoDao;
 
 
 
