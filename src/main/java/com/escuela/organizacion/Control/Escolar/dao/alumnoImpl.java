@@ -2,6 +2,7 @@ package com.escuela.organizacion.Control.Escolar.dao;
 
 import com.escuela.organizacion.Control.Escolar.entity.alumno;
 import org.springframework.stereotype.Repository;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.persistence.EntityManager;
@@ -9,12 +10,12 @@ import java.util.List;
 
 
 @Repository
-public class alumnoImpl {
+public class alumnoImpl implements IalumnoDao {
     private EntityManager em;
 
-    @SuppressWarnings("unchecked")
+
     @Transactional(readOnly = true)
-    public List<alumno> findAllAlumnos() {
+    public List<alumno> findAll() {
 
         return em.createQuery("from alumno").getResultList();
     }
@@ -35,13 +36,13 @@ public class alumnoImpl {
 
 
     @Transactional(readOnly = true)
-    public alumno findOneAlumno(Long id) {
+    public alumno findOne(Long id) {
         return em.find(alumno.class, id);
     }
 
     @Transactional
     public void delete(Long id) {
-        em.remove(findOneAlumno(id));
+        em.remove(findOne(id));
     }
 
 

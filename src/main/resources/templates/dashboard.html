@@ -1,180 +1,52 @@
 <!DOCTYPE html>
 <html lang="sp" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link rel="stylesheet" th:href="@{/css/style.css}"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
+    <link rel="stylesheet" th:href="@{/static/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="UTF-8">
 
 </head>
-<body background="papel.jpg">
-
+<body background="">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
-
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hamburg">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
-
-        <div class="collapse navbar-collapse" id="hamburg">
-            <ul class="nav navbar-nav">
-                <li class="active"><a th:href="@{/listar}">Inicio</a></li>
-                <li><a th:href="@{/form}">Abrir Cuenta</a></li>
-            </ul>
-        </div>
-
+        <ul class="nav navbar-nav">
+            <li><a th:href="@{/form}">Panel de Información</a></li>
+            <li class="active"><a th:href="@{/listar}">Abrir Cuenta</a></li>
+        </ul>
     </div>
 </nav>
-
-<!------------------------------------------>
-<p class="zoom-area" style="font-size:x-large">Progreso General del Alumno</p>
 <div class="container">
-    <table class="table table-striped">
-        <thead>
-        <tr>
-            <th scope="col">Materias</th>
-            <th scope="col">1° Bi</th>
-            <th scope="col">2° Bi</th>
-            <th scope="col">3° Bi</th>
-            <th scope="col">4° Bi</th>
-            <th scope="col">5° Bi</th>
-            <th scope="col">Promedio</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <th scope="row">Español</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Matematicas</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Ciencias naturales</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Valores</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Educacion Fisica</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Historia</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Artes</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Inglés</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Geografia</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        <tr>
-            <th scope="row">Computacion</th>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-            <td>N/A</td>
-        </tr>
-        </tbody>
-    </table>
-
-    <br>
-
-
-</div>
-<p class="zoom-area" style="font-size:x-large">Observaciones</p>
-<div class="container">
-    <div class="row">
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Maestro</th>
-                <th>Materia</th>
-                <th>Observacion</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="renglon: ${clientes}">
-                <td th:text="${renglon.id}"></td>
-                <td th:text="${renglon.createAt}"></td>
-                <td th:text="${renglon.maestro}"></td>
-                <td th:text="${renglon.materia}"></td>
-                <td th:text="${renglon.observacion}"></td>
-
-            </tr>
-
-            </tbody>
-        </table>
+    <div class="parent">
+        <form class="form-signin form-login">
+            <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
+            <br>
+            <input type="text" class="form-control" name="username" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
+            <br>
+            <input type="email" class="form-control" name="email" placeholder="E-mail" required="" autofocus="" />
+            <br>
+            <input type="password" class="form-control" id="password" placeholder="Contraseña" required=""/>
+            <br>
+            <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required=""/>
+            <br>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" onClick="comprobarClave()" type="submit">Abrir Cuenta</button>
+        </form>
     </div>
 </div>
-
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+<script>
+    function comprobarClave(){
+        password1 = document.getElementById("password").value;
+        password2 = document.getElementById("password2").value;
+
+        if (password1 == password2)
+            return null;
+        else
+            alert("Las contraseñas son diferentes, por favor compruebelas")
+    }
+</script>
 </html>
