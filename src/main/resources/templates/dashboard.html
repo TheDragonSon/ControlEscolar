@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
 
 </head>
-<body background="">
+<body background="papel.jpg">
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -19,39 +19,146 @@
         </ul>
     </div>
 </nav>
+<p class="zoom-area" style="font-size:x-large">Progreso General del Alumno</p>
 <div class="container">
     <table class="table table-striped">
         <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th scope="col">Materias</th>
+            <th scope="col">1° Bi</th>
+            <th scope="col">2° Bi</th>
+            <th scope="col">3° Bi</th>
+            <th scope="col">4° Bi</th>
+            <th scope="col">5° Bi</th>
+            <th scope="col">Promedio</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
+            <th scope="row">Español</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
         <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
+            <th scope="row">Matematicas</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
         <tr>
-            <th scope="row">3</th>
-            <td>Larry</td>
-            <td>the Bird</td>
-            <td>@twitter</td>
+            <th scope="row">Ciencias naturales</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Valores</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Educacion Fisica</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Historia</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Artes</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Inglés</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Geografia</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+        </tr>
+        <tr>
+            <th scope="row">Computacion</th>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
+            <td>N/A</td>
         </tr>
         </tbody>
     </table>
 
+    <br>
+
+
 </div>
+<p class="zoom-area" style="font-size:x-large">Observaciones</p>
+<div class="container">
+    <div class="row">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Maestro</th>
+                <th>Materia</th>
+                <th>Observacion</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="renglon: ${clientes}">
+                <td th:text="${renglon.id}"></td>
+                <td th:text="${renglon.createAt}"></td>
+                <td th:text="${renglon.maestro}"></td>
+                <td th:text="${renglon.materia}"></td>
+                <td th:text="${renglon.observacion}"></td>
+
+            </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
 </body>
 
 </html>
