@@ -2,27 +2,38 @@
 <html lang="sp" xmlns:th="http://www.thymeleaf.org">
 <head>
     <!--Estas son las librerias de CSS y BOOTSTRAP -->
-    <link rel="stylesheet" th:href="@{/static/css/style.css}"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <meta charset="UTF-8">
 </head>
-<body th:background="@{/static/img/escuela/}">
+<body th:background="@{/img/escuela.jpg}">
+
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hamburg">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
-        <ul class="nav navbar-nav">
-            <li class="active"><a th:href="@{/}">Iniciar Sesión</a></li>
-            <li><a th:href="@{/form}">Abrir Cuenta</a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="hamburg">
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/}">Iniciar Sesión</a></li>
+                <li><a th:href="@{/form}">Abrir Cuenta</a></li>
+            </ul>
+        </div>
+
     </div>
+
 </nav>
 <div class="container">
     <div class="parent">
         <form class="form-signin form-login">
             <h2 class="form-signin-heading">Bienvenido al Control Escolar</h2>
-            <input type="text" class="form-control" name="username" placeholder="ID" required="" autofocus="" />
+            <input type="text" class="form-control" name="username" placeholder="ID" required="" autofocus=""/>
             <input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recordarme
@@ -32,4 +43,13 @@
     </div>
 </div>
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </html>
