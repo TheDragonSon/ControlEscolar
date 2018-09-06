@@ -20,18 +20,19 @@
 </nav>
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login">
+        <form class="form-signin form-login" th:action="@{/form}" th:object="${Usuario}" method="post">
             <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
             <br>
-            <input type="text" class="form-control" name="username" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
+            <input type="text" class="form-control" name="username" th:field="*{clave}" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
             <br>
-            <input type="email" class="form-control" name="email" placeholder="E-mail" required="" autofocus="" />
+            <input type="email" class="form-control" name="email" th:field="*{email}" placeholder="E-mail" required="" autofocus="" />
             <br>
-            <input type="password" class="form-control" id="password" placeholder="Contraseña" required=""/>
+            <input type="password" class="form-control" id="password" th:field="*{contrasenia}" placeholder="Contraseña" required=""/>
             <br>
             <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required=""/>
             <br>
             <br>
+            <input type="hidden" th:field="*{id}">
             <button class="btn btn-lg btn-primary btn-block" onClick="comprobarClave()" type="submit">Abrir Cuenta</button>
         </form>
     </div>
