@@ -13,7 +13,7 @@
             <a class="navbar-brand" href="#">Escuela</a>
         </div>
         <ul class="nav navbar-nav">
-            <li><a th:href="@{"/"}">Iniciar Sesión</a></li>
+            <li><a th:href="@{/}">Iniciar Sesión</a></li>
             <li class="active"><a th:href="@{/form}">Abrir Cuenta</a></li>
         </ul>
     </div>
@@ -23,11 +23,11 @@
         <form class="form-signin form-login">
             <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
             <br>
-            <input type="text" class="form-control" name="username" placeholder="Ingrese el ID que se le otorgó" required="" autofocus="" />
+            <input type="text" class="form-control" th:field="*{clave}" name="username" placeholder="Ingrese la Clave que se le otorgó" required="" autofocus="" />
             <br>
-            <input type="email" class="form-control" name="email" placeholder="E-mail" required="" autofocus="" />
+            <input type="email" class="form-control" th:field="*{email}" name="email" placeholder="E-mail" required="" autofocus="" />
             <br>
-            <input type="password" class="form-control" id="password" placeholder="Contraseña" required=""/>
+            <input type="password" class="form-control" th:field="*{password}" id="password" placeholder="Contraseña" required=""/>
             <br>
             <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required=""/>
             <br>
