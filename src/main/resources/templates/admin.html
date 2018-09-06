@@ -20,8 +20,19 @@
         </div>
         <div class="collapse navbar-collapse" id="hamburg">
             <ul class="nav navbar-nav">
-                <li><a th:href="@{/form}">Tus alumnos </a></li>
-                <li class="active"><a th:href="@{/RegistroMaestro}">Registro</a></li>
+                <li><a th:href="@{/form}">Iniciar Sesión </a></li>
+                <li class="active"><a th:href="@{/RegistroMaestro}">Abrir cuenta</a></li>
+                <li><a th:href="@{/form}">Alumnos </a></li>
+                <li><a th:href="@{/form}">Maestros </a></li>
+                <li><a th:href="@{/form}">Generar ID </a></li>
+
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="btn-nav"><a class="btn btn-primary btn-small navbar-btn" href="/register">Cerrar Sesión</a>
+                    </div>
+                </li>
             </ul>
         </div>
 
