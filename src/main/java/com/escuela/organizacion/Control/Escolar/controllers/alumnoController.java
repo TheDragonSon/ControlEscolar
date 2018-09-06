@@ -15,10 +15,16 @@ public class alumnoController {
    private IalumnoDao alumnoDao;
 
     @RequestMapping(value = "/lista", method = RequestMethod.GET)
-    public String listar(Model model) {
+    public String lista(Model model) {
         model.addAttribute("titulo", "Listado de alumnos");
         model.addAttribute("alumnos", alumnoDao.findAll());
         return "lista";
+    }
+
+
+    @RequestMapping(value = "/")
+    public String index() {
+        return "Index";
     }
 
 

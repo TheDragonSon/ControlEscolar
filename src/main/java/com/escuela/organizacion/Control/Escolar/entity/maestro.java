@@ -35,9 +35,51 @@ public class maestro {
     private String materia2;
 
 
+    public Long getId() {
+        return id;
+    }
 
+    public void setId(Long id) {
+        this.id = id;
+    }
 
+    public String getNombre() {
+        return nombre;
+    }
 
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
+    public String getRFC() {
+        return RFC;
+    }
 
+    public void setRFC(String RFC) {
+        this.RFC = RFC;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getMateria1() {
+        return materia1;
+    }
+
+    public void setMateria1(String materia1) {
+        this.materia1 = materia1;
+    }
+
+    public String getMateria2() {
+        return materia2;
+    }
+
+    public void setMateria2(String materia2) {
+        this.materia2 = materia2;
+    }
 }
