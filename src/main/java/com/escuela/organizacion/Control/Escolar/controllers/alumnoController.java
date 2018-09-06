@@ -32,4 +32,9 @@ public class alumnoController {
         return "maestro";
     }
 
+
+    @RequestMapping(value = "/admin")
+    public String admin() {
+        return "admin";
+    }
 }
