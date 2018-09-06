@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="sp" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" th:href="@{/css/dropmenu.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+</head>
+<body th:background="@{/img/papel.jpg}">
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#hamburg">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Escuela</a>
+        </div>
+        <div class="collapse navbar-collapse" id="hamburg">
+            <ul class="nav navbar-nav">
+                <li class="active"><a th:href="@{/listar}">Iniciar Sesión</a></li>
+                <li><a th:href="@{/form}">Abrir Cuenta</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <div class="btn-nav"><a class="btn btn-primary btn-small navbar-btn" href="/register">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</nav>
+
+<div class="container">
+    <div class="parent">
+        <div>
+            <h1>hola</h1>
+            <div class="dropdown">
+                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
+                <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </div>
+        </div>
+        <form class="form-signin form-login">
+            <h2 class="form-signin-heading">Panel de Información</h2>
+            <br>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th scope="col">Materias</th>
+                    <th scope="col">1° Bi</th>
+                    <th scope="col">2° Bi</th>
+                    <th scope="col">3° Bi</th>
+                    <th scope="col">4° Bi</th>
+                    <th scope="col">5° Bi</th>
+                    <th scope="col">Promedio</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">Español</th>
+                    <td><input type="text" name="calificacion1BE" ></td>
+                    <td><input type="text" name="calificacion2BE" ></td>
+                    <td><input type="text" name="calificacion3BE" ></td>
+                    <td><input type="text" name="calificacion4BE" ></td>
+                    <td><input type="text" name="calificacion5BE" ></td>
+                    <td><input type="text" name="promedioE" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Matematicas</th>
+                    <td><input type="text" name="calificacion1BM" ></td>
+                    <td><input type="text" name="calificacion2BM" ></td>
+                    <td><input type="text" name="calificacion3BM" ></td>
+                    <td><input type="text" name="calificacion4BM" ></td>
+                    <td><input type="text" name="calificacion5BM" ></td>
+                    <td><input type="text" name="promedioM" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Ciencias naturales</th>
+                    <td><input type="text" name="calificacion1BCN" ></td>
+                    <td><input type="text" name="calificacion2BCN" ></td>
+                    <td><input type="text" name="calificacion3BCN" ></td>
+                    <td><input type="text" name="calificacion4BCN" ></td>
+                    <td><input type="text" name="calificacion5BCN" ></td>
+                    <td><input type="text" name="promedioCN" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Valores</th>
+                    <td><input type="text" name="calificacion1BV" ></td>
+                    <td><input type="text" name="calificacion2BV" ></td>
+                    <td><input type="text" name="calificacion3BV" ></td>
+                    <td><input type="text" name="calificacion4BV" ></td>
+                    <td><input type="text" name="calificacion5BV" ></td>
+                    <td><input type="text" name="promedioV" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Educacion Fisica</th>
+                    <td><input type="text" name="calificacion1BEF" ></td>
+                    <td><input type="text" name="calificacion2BEF" ></td>
+                    <td><input type="text" name="calificacion3BEF" ></td>
+                    <td><input type="text" name="calificacion4BEF" ></td>
+                    <td><input type="text" name="calificacion5BEF" ></td>
+                    <td><input type="text" name="promedioEF" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Historia</th>
+                    <td><input type="text" name="calificacion1BEF" ></td>
+                    <td><input type="text" name="calificacion2BEF" ></td>
+                    <td><input type="text" name="calificacion3BEF" ></td>
+                    <td><input type="text" name="calificacion4BEF" ></td>
+                    <td><input type="text" name="calificacion5BEF" ></td>
+                    <td><input type="text" name="promedioEF" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Artes</th>
+                    <td><input type="text" name="calificacion1BA" ></td>
+                    <td><input type="text" name="calificacion2BA" ></td>
+                    <td><input type="text" name="calificacion3BA" ></td>
+                    <td><input type="text" name="calificacion4BA" ></td>
+                    <td><input type="text" name="calificacion5BA" ></td>
+                    <td><input type="text" name="promedioA" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Inglés</th>
+                    <td><input type="text" name="calificacion1BI" ></td>
+                    <td><input type="text" name="calificacion2BI" ></td>
+                    <td><input type="text" name="calificacion3BI" ></td>
+                    <td><input type="text" name="calificacion4BI" ></td>
+                    <td><input type="text" name="calificacion5BI" ></td>
+                    <td><input type="text" name="promedioI" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Geografia</th>
+                    <td><input type="text" name="calificacion1BG" ></td>
+                    <td><input type="text" name="calificacion2BG" ></td>
+                    <td><input type="text" name="calificacion3BG" ></td>
+                    <td><input type="text" name="calificacion4BG" ></td>
+                    <td><input type="text" name="calificacion5BG" ></td>
+                    <td><input type="text" name="promedioG" disabled></td>
+                </tr>
+                <tr>
+                    <th scope="row">Computacion</th>
+                    <td><input type="text" name="calificacion1BCO" ></td>
+                    <td><input type="text" name="calificacion2BCO" ></td>
+                    <td><input type="text" name="calificacion3BCO" ></td>
+                    <td><input type="text" name="calificacion4BCO" ></td>
+                    <td><input type="text" name="calificacion5BCO" ></td>
+                    <td><input type="text" name="promedioCO" disabled></td>
+                </tr>
+                </tbody>
+            </table>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <form class="form-signin form-login">
+        <h2 class="form-signin-heading">Observaciones</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Fecha</th>
+                <th>Maestro</th>
+                <th>Materia</th>
+                <th>Observacion</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="renglon: ${clientes}">
+                <td th:text="${renglon.id}"></td>
+                <td th:text="${renglon.createAt}"></td>
+                <td th:text="${renglon.maestro}"></td>
+                <td th:text="${renglon.materia}"></td>
+                <td th:text="${renglon.observacion}"></td>
+            </tr>
+
+            </tbody>
+        </table>
+            </form>
+    </div>
+</div>
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<script type="text/javascript" th:src="@{/Js/dropmenu.js}"></script>
+
+</html>
