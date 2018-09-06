@@ -20,8 +20,7 @@ public class usuario {
     @NotEmpty
     private String clave;
 
-    @NotEmpty
-    private String usuario;
+
 
     @NotEmpty
     private int contrasenia;
@@ -47,13 +46,8 @@ public class usuario {
         this.clave = clave;
     }
 
-    public String getUsuario() {
-        return usuario;
-    }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
+
 
     public int getContrasenia() {
         return contrasenia;
