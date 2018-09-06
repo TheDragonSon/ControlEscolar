@@ -27,5 +27,9 @@ public class alumnoController {
         return "Index";
     }
 
+    @RequestMapping(value = "/maestro")
+    public String maestro() {
+        return "maestro";
+    }
 
 }
