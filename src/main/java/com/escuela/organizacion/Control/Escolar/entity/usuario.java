@@ -20,7 +20,7 @@ public class usuario {
     @NotEmpty
     private String clave;
 
-    @NotEmpty
+
     private String usuario;
 
     @NotEmpty

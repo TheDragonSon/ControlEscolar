@@ -28,19 +28,10 @@ public class administrativoController {
     }
 
     @RequestMapping(value = "/form", method = RequestMethod.POST)
-    public String guardar(@Valid usuario Usuario, BindingResult result, Model model, SessionStatus status) {
-
-        if (result.hasErrors()) {
-            model.addAttribute("titulo", "Formulario");
-            return "form";
-        }
-
+    public String guardar( usuario Usuario) {
         usuarioDao.save(Usuario);
-        status.setComplete();
-        return "redirect:lista";
+        return "redirect:form";
     }
-
-
 
 
 }
