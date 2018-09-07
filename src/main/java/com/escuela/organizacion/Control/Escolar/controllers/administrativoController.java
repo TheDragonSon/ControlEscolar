@@ -30,6 +30,7 @@ public class administrativoController {
     @RequestMapping(value = "/form", method = RequestMethod.POST)
     public String guardar( usuario Usuario) {
         usuarioDao.save(Usuario);
+
         return "redirect:form";
     }
 
