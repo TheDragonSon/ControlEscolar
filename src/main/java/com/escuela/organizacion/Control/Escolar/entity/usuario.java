@@ -24,7 +24,7 @@ public class usuario {
     private String usuario;
 
     @NotEmpty
-    private int contrasenia;
+    private String contrasenia;
 
     @NotEmpty
     @Email
@@ -55,11 +55,11 @@ public class usuario {
         this.usuario = usuario;
     }
 
-    public int getContrasenia() {
+    public String getContrasenia() {
         return contrasenia;
     }
 
-    public void setContrasenia(int contrasenia) {
+    public void setContrasenia(String    contrasenia) {
         this.contrasenia = contrasenia;
     }
 
