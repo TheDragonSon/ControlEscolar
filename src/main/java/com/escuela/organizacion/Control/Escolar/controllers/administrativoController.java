@@ -27,12 +27,24 @@ public class administrativoController {
         return "form";
     }
 
-    @RequestMapping(value = "/form", method = RequestMethod.POST)
-    public String guardar( usuario Usuario) {
-        usuarioDao.save(Usuario);
+    /*
+        @RequestMapping(value = "/form", method = RequestMethod.POST)
+        public String guardar( usuario Usuario) {
+            usuarioDao.save(Usuario);
 
+            return "redirect:form";
+        }
+    */
+    @RequestMapping(value = "/form", method = RequestMethod.POST)
+    public String guardar(@Valid usuario Usuario, BindingResult result, Model model, SessionStatus status) {
+
+        if (result.hasErrors()) {
+            model.addAttribute("titulo", "Formulario de Cliente");
+            return "form";
+        }
+
+        usuarioDao.save(Usuario);
+        status.setComplete();
         return "redirect:form";
     }
-
-
 }
