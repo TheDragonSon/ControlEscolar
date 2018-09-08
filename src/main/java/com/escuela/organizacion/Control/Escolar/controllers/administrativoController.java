@@ -26,6 +26,10 @@ public class administrativoController {
         model.put("titulo", "Formulario");
         return "form";
     }
+    @RequestMapping(value = "/registrovalido")
+    public String validar (Map<String, Object> model) {
+        return "registrovalido";
+    }
 
     /*
         @RequestMapping(value = "/form", method = RequestMethod.POST)
@@ -45,6 +49,6 @@ public class administrativoController {
 
         usuarioDao.save(Usuario);
         status.setComplete();
-        return "redirect:form";
+        return "redirect:registrovalido";
     }
 }

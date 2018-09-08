@@ -37,4 +37,5 @@ public class alumnoController {
     public String admin() {
         return "admin";
     }
+
 }
