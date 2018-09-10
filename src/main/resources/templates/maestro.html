@@ -5,6 +5,8 @@
     <link rel="stylesheet" th:href="@{/css/dropmenu.css}"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <meta charset="UTF-8">
 
 </head>
@@ -27,7 +29,9 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <div class="btn-nav"><a class="btn btn-primary btn-small navbar-btn" href="/register">Cerrar Sesión</a>
+                    <div class="btn-nav animated bounce"><a class="btn btn-primary btn-small navbar-btn"
+                                                            href="/register">Cerrar
+                        Sesión</a>
                     </div>
                 </li>
             </ul>
@@ -38,19 +42,52 @@
 
 <div class="container">
     <div class="parent">
-        <div>
-            <h1>hola</h1>
-            <div class="dropdown">
-                <button onclick="myFunction()" class="dropbtn">Dropdown</button>
-                <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+
+        <div class="row" align="center">
+            <h1>Calificaciónes</h1>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button onclick="FuncionGrado()" class="dropbtn">Grado</button>
+                    <div id="BtnGrado" class="dropdown-content">
+                        <a href="#">1er</a>
+                        <a href="#">2do</a>
+                        <a href="#">3ro</a>
+                        <a href="#">4to</a>
+                        <a href="#">5to</a>
+                        <a href="#">3to</a>
+                    </div>
                 </div>
             </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button onclick="FuncionGrupo()" class="dropbtn">Grupo</button>
+                    <div id="BtnGrupo" class="dropdown-content">
+                        <a href="#">A</a>
+                        <a href="#">B</a>
+                        <a href="#">C</a>
+                        <a href="#">D</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dropdown">
+                    <button onclick="FuncionAlumno()" class="dropbtn">Alumno</button>
+                    <div id="BtnAlumno" class="dropdown-content">
+                        <a href="#">Juanito</a>
+                        <a href="#">Pedro</a>
+                        <a href="#">Pancha</a>
+                        <a href="#">Miguel</a>
+                        <a href="#">Grecia</a>
+                        <a href="#">Triunfo</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <button class="dropbtn2" id="btncalificacion" onclick="habilitar()">Editar</button>
+            </div>
         </div>
+
         <form class="form-signin form-login">
-            <h2 class="form-signin-heading">Panel de Información</h2>
             <br>
             <table class="table table-striped">
                 <thead>
@@ -67,93 +104,93 @@
                 <tbody>
                 <tr>
                     <th scope="row">Español</th>
-                    <td><input type="text" name="calificacion1BE" ></td>
-                    <td><input type="text" name="calificacion2BE" ></td>
-                    <td><input type="text" name="calificacion3BE" ></td>
-                    <td><input type="text" name="calificacion4BE" ></td>
-                    <td><input type="text" name="calificacion5BE" ></td>
-                    <td><input type="text" name="promedioE" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BE" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BE" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BE" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BE" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BE" disabled></td>
+                    <td><input class="editable" type="text" name="promedioE" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Matematicas</th>
-                    <td><input type="text" name="calificacion1BM" ></td>
-                    <td><input type="text" name="calificacion2BM" ></td>
-                    <td><input type="text" name="calificacion3BM" ></td>
-                    <td><input type="text" name="calificacion4BM" ></td>
-                    <td><input type="text" name="calificacion5BM" ></td>
-                    <td><input type="text" name="promedioM" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BM" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BM" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BM" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BM" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BM" disabled></td>
+                    <td><input class="editable" type="text" name="promedioM" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Ciencias naturales</th>
-                    <td><input type="text" name="calificacion1BCN" ></td>
-                    <td><input type="text" name="calificacion2BCN" ></td>
-                    <td><input type="text" name="calificacion3BCN" ></td>
-                    <td><input type="text" name="calificacion4BCN" ></td>
-                    <td><input type="text" name="calificacion5BCN" ></td>
-                    <td><input type="text" name="promedioCN" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BCN" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BCN" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BCN" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BCN" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BCN" disabled></td>
+                    <td><input class="editable" type="text" name="promedioCN" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Valores</th>
-                    <td><input type="text" name="calificacion1BV" ></td>
-                    <td><input type="text" name="calificacion2BV" ></td>
-                    <td><input type="text" name="calificacion3BV" ></td>
-                    <td><input type="text" name="calificacion4BV" ></td>
-                    <td><input type="text" name="calificacion5BV" ></td>
-                    <td><input type="text" name="promedioV" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BV" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BV" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BV" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BV" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BV" disabled></td>
+                    <td><input class="editable" type="text" name="promedioV" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Educacion Fisica</th>
-                    <td><input type="text" name="calificacion1BEF" ></td>
-                    <td><input type="text" name="calificacion2BEF" ></td>
-                    <td><input type="text" name="calificacion3BEF" ></td>
-                    <td><input type="text" name="calificacion4BEF" ></td>
-                    <td><input type="text" name="calificacion5BEF" ></td>
-                    <td><input type="text" name="promedioEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BEF" disabled></td>
+                    <td><input class="editable" type="text" name="promedioEF" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Historia</th>
-                    <td><input type="text" name="calificacion1BEF" ></td>
-                    <td><input type="text" name="calificacion2BEF" ></td>
-                    <td><input type="text" name="calificacion3BEF" ></td>
-                    <td><input type="text" name="calificacion4BEF" ></td>
-                    <td><input type="text" name="calificacion5BEF" ></td>
-                    <td><input type="text" name="promedioEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BEF" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BEF" disabled></td>
+                    <td><input class="editable" type="text" name="promedioEF" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Artes</th>
-                    <td><input type="text" name="calificacion1BA" ></td>
-                    <td><input type="text" name="calificacion2BA" ></td>
-                    <td><input type="text" name="calificacion3BA" ></td>
-                    <td><input type="text" name="calificacion4BA" ></td>
-                    <td><input type="text" name="calificacion5BA" ></td>
-                    <td><input type="text" name="promedioA" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BA" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BA" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BA" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BA" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BA" disabled></td>
+                    <td><input class="editable" type="text" name="promedioA" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Inglés</th>
-                    <td><input type="text" name="calificacion1BI" ></td>
-                    <td><input type="text" name="calificacion2BI" ></td>
-                    <td><input type="text" name="calificacion3BI" ></td>
-                    <td><input type="text" name="calificacion4BI" ></td>
-                    <td><input type="text" name="calificacion5BI" ></td>
-                    <td><input type="text" name="promedioI" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BI" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BI" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BI" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BI" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BI" disabled></td>
+                    <td><input class="editable" type="text" name="promedioI" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Geografia</th>
-                    <td><input type="text" name="calificacion1BG" ></td>
-                    <td><input type="text" name="calificacion2BG" ></td>
-                    <td><input type="text" name="calificacion3BG" ></td>
-                    <td><input type="text" name="calificacion4BG" ></td>
-                    <td><input type="text" name="calificacion5BG" ></td>
-                    <td><input type="text" name="promedioG" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BG" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BG" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BG" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BG" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BG" disabled></td>
+                    <td><input class="editable" type="text" name="promedioG" disabled></td>
                 </tr>
                 <tr>
                     <th scope="row">Computacion</th>
-                    <td><input type="text" name="calificacion1BCO" ></td>
-                    <td><input type="text" name="calificacion2BCO" ></td>
-                    <td><input type="text" name="calificacion3BCO" ></td>
-                    <td><input type="text" name="calificacion4BCO" ></td>
-                    <td><input type="text" name="calificacion5BCO" ></td>
-                    <td><input type="text" name="promedioCO" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion1BCO" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion2BCO" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion3BCO" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion4BCO" disabled></td>
+                    <td><input class="editable" type="text" name="calificacion5BCO" disabled></td>
+                    <td><input class="editable" type="text" name="promedioCO" disabled></td>
                 </tr>
                 </tbody>
             </table>
@@ -161,32 +198,46 @@
         </form>
     </div>
 </div>
+
 <div class="container">
     <div class="row">
+        <div class="row">
+            <h2 class="form-signin-heading">Observaciones
+                <button class="dropbtn2" id="btnob" onclick="habilitarOb()" style="margin-left: 50px">Editar
+                    observación
+                </button>
+            </h2>
+        </div>
         <form class="form-signin form-login">
-        <h2 class="form-signin-heading">Observaciones</h2>
-        <table class="table table-striped">
-            <thead>
-            <tr>
-                <th>ID</th>
-                <th>Fecha</th>
-                <th>Maestro</th>
-                <th>Materia</th>
-                <th>Observacion</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr th:each="renglon: ${clientes}">
-                <td th:text="${renglon.id}"></td>
-                <td th:text="${renglon.createAt}"></td>
-                <td th:text="${renglon.maestro}"></td>
-                <td th:text="${renglon.materia}"></td>
-                <td th:text="${renglon.observacion}"></td>
-            </tr>
 
-            </tbody>
-        </table>
-            </form>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Maestro</th>
+                    <th>Materia</th>
+                    <th>Observacion</th>
+                </tr>
+                <tr>
+                    <td><input type="text" name="id" disabled></td>
+                    <td><input type="text" name="fecha" disabled></td>
+                    <td><input type="text" name="maestro" disabled></td>
+                    <td><input type="text" name="materia" disabled></td>
+                    <td><input class="editable2" type="text" name="observacion" disabled></td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr th:each="renglon: ${clientes}">
+                    <td th:text="${renglon.id}"></td>
+                    <td th:text="${renglon.createAt}"></td>
+                    <td th:text="${renglon.maestro}"></td>
+                    <td th:text="${renglon.materia}"></td>
+                    <td th:text="${renglon.observacion}"></td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
     </div>
 </div>
 </body>
@@ -202,5 +253,48 @@
         integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
         crossorigin="anonymous"></script>
 <script type="text/javascript" th:src="@{/Js/dropmenu.js}"></script>
+<script>
+    function habilitar() {
+        var inputs = document.getElementsByClassName("editable");
+        var boton = document.getElementById("btncalificacion");
+        var i;
+        var activo = false;
+        if (boton.innerText != "Enviar") {
+            activo = false;
+            boton.innerText = "Enviar";
+        } else {
+            boton.innerText = "Editar";
+            activo = true;
+        }
+
+
+        for (i = 0; i < inputs.length; i++) {
+            var inputciclo = inputs[i];
+            inputciclo.disabled = activo;
+        }
+    }
+</script>
+
+<script>
+    function habilitarOb() {
+        var inputs = document.getElementsByClassName("editable2");
+        var boton = document.getElementById("btnob");
+        var i;
+        var activo = false;
+        if (boton.innerText != "Enviar") {
+            activo = false;
+            boton.innerText = "Enviar";
+        } else {
+            boton.innerText = "Editar observación";
+            activo = true;
+        }
+
+
+        for (i = 0; i < inputs.length; i++) {
+            var inputciclo = inputs[i];
+            inputciclo.disabled = activo;
+        }
+    }
+</script>
 
 </html>
