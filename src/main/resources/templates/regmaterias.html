@@ -26,12 +26,22 @@
 <div class="container">
     <h2 class="form-signin-heading">Materias</h2>
     <div class="parent">
-        <tr th:each="renglon: ${materias}">
-            <td th:text="${renglon.id}"></td>
-            <td th:text="${renglon.nombre}"></td>
-            <td><a th:href="@{/form/{idABuscar}(idABuscar=${renglon.id})}" th:text="Editar"
-                   class="btn btn-primary btn-xs"> </a></td>
-        </tr>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Materia</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="renglon: ${materias}">
+                <td th:text="${renglon.id}"></td>
+                <td th:text="${renglon.materias}"></td>
+                <td> <a th:href="@{/form/} + ${renglon.id}" th:text="Editar" class="btn btn-primary btn-xs"> </a> </td>
+            </tr>
+
+            </tbody>
+        </table>
         </form>
     </div>
 </div>
@@ -40,12 +50,22 @@
 <div class="container">
     <div class="parent">
         <h2 class="form-signin-heading">Grupos</h2>
-        <tr th:each="renglon: ${grupos}">
-            <td th:text="${renglon.id}"></td>
-            <td th:text="${renglon.grupo}"></td>
-            <td><a th:href="@{/form/{idABuscar}(idABuscar=${renglon.id})}" th:text="Editar"
-                   class="btn btn-primary btn-xs"> </a></td>
-        </tr>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Grupo</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="renglon: ${clientes}">
+                <td th:text="${renglon.id}"></td>
+                <td th:text="${renglon.grupos}"></td>
+                <td> <a th:href="@{/form/} + ${renglon.id}" th:text="Editar" class="btn btn-primary btn-xs"> </a> </td>
+            </tr>
+
+            </tbody>
+        </table>
         </form>
     </div>
 </div>
