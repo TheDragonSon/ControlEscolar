@@ -2,11 +2,15 @@ package com.escuela.organizacion.Control.Escolar.controllers;
 
 
 import com.escuela.organizacion.Control.Escolar.dao.IalumnoDao;
+import com.escuela.organizacion.Control.Escolar.entity.alumno;
+import com.escuela.organizacion.Control.Escolar.entity.maestro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.Map;
 
 @Controller
 public class alumnoController {
@@ -48,6 +52,21 @@ public class alumnoController {
         return "dashboard";
     }
 
+    @RequestMapping(value = "/maestroAux")
+    public String maestroAux( Map<String, Object> model ) {
+        maestro Maestro = new maestro();
+model.put("Maestro",Maestro);
+        return "maestroAux";
+    }
+
+
+
+    @RequestMapping(value = "/regalumno")
+    public String regalumno( Map<String, Object> model ) {
+        alumno Alumno = new alumno();
+        model.put("Alumno",Alumno);
+        return "regalumno";
+    }
 
 
 
