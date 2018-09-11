@@ -37,15 +37,19 @@
 <div class="container">
     <div class="parent">
         <form class="form-signin form-login" th:action="@{/form}" th:object="${Usuario}" method="post">
-            <h2 class="form-signin-heading">Por Favor Ingrese sus Datos</h2>
+            <h2 class="form-signin-heading">Ingrese Datos del maestro</h2>
             <br>
-            <input type="text" class="form-control" name="username" th:field="*{clave}" placeholder="Ingrese el ID que se le otorgó" required autofocus="" />
+            <h4>Nombre</h4>
+            <input type="text" class="form-control" name="nombre" th:field="*{clave}" placeholder="Ingrese el nombre del maestro" required autofocus="" />
             <br>
-            <input type="email" class="form-control" name="email" th:field="*{email}" placeholder="E-mail" required autofocus="" />
+            <h4>Clave</h4>
+            <input type="text" class="form-control" name="clave" th:field="*{email}" placeholder="Ingrese la clave del maestro" required autofocus="" />
             <br>
-            <input type="password" class="form-control" id="password" th:field="*{contrasenia}" placeholder="Contraseña" required/>
+            <h4>E-mail</h4>
+            <input type="email" class="form-control" id="email" th:field="*{contrasenia}" placeholder="E-mail" required/>
             <br>
-            <input type="password" class="form-control" id="password2" placeholder="Confirma tu Contraseña" required/>
+            <h4>Materia</h4>
+            <input type="text" class="form-control" id="materia" placeholder="Materia impartida" required/>
             <br>
             <br>
             <input type="hidden" th:field="*{id}">

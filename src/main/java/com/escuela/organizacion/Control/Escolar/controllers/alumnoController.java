@@ -38,4 +38,17 @@ public class alumnoController {
         return "admin";
     }
 
+    @RequestMapping(value = "/alumno")
+    public String alumnno() {
+        return "alumno";
+    }
+
+    @RequestMapping(value = "/dashboard")
+    public String dashboard() {
+        return "dashboard";
+    }
+
+
+
+
 }
