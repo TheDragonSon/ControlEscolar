@@ -21,7 +21,6 @@ public class usuario {
     private String clave;
 
 
-    private String usuario;
 
     @NotEmpty
     private String contrasenia;
@@ -45,14 +44,6 @@ public class usuario {
 
     public void setClave(String clave) {
         this.clave = clave;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
     }
 
     public String getContrasenia() {
