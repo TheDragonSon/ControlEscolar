@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link rel="stylesheet" th:href="@{/css/style.css}"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="UTF-8">
+
+</head>
+<body th:background="@{/img/escuela}">
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Escuela</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li><a th:href="@{/}">Iniciar Sesión</a></li>
+            <li><a th:href="@{/form}">Abrir Cuenta</a></li>
+            <li><a th:href="@{/form}">Registrar Nuevo Alumno</a></li>
+            <li class="active"><a th:href="@{/regmaterias">Registrar Materias</a></li>
+        </ul>
+    </div>
+</nav>
+<div class="container">
+    <div class="parent">
+        <form class="form-signin form-login" th:action="@{/regalumno}" th:object="${alumno}" method="post">
+            <h2 class="form-signin-heading">Ingrese los datos del Nuevo Alumno</h2>
+            <br>
+            <input type="text" class="form-control" name="username" th:field="*{nombre}" placeholder="Nombre" required
+                   autofocus=""/>
+            <br>
+            <input type="email" class="form-control" name="email" th:field="*{edad}" placeholder="Edad" required
+                   autofocus=""/>
+            <br>
+            <input type="password" class="form-control" id="password" th:field="*{clave}" placeholder="Clave" required/>
+            <br>
+            <br>
+            <input type="hidden" th:field="*{id}">
+            <input class="btn btn-lg btn-primary btn-block" type="submit">Registrar Nuevo Alumno </input>
+        </form>
+    </div>
+</div>
+</body>
+</html>
