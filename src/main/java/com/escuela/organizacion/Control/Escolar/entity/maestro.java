@@ -22,19 +22,17 @@ public class maestro implements Serializable {
     @NotEmpty
     private String nombre;
 
-    @NotEmpty
-    private String RFC;
+
 
     @NotEmpty
     @Email
     private String email;
 
     @NotEmpty
-    private String materia1;
+    private String materia;
 
     @NotEmpty
-    private String materia2;
-
+    private String clave;
 
     public Long getId() {
         return id;
@@ -52,14 +50,6 @@ public class maestro implements Serializable {
         this.nombre = nombre;
     }
 
-    public String getRFC() {
-        return RFC;
-    }
-
-    public void setRFC(String RFC) {
-        this.RFC = RFC;
-    }
-
     public String getEmail() {
         return email;
     }
@@ -68,19 +58,19 @@ public class maestro implements Serializable {
         this.email = email;
     }
 
-    public String getMateria1() {
-        return materia1;
+    public String getMateria() {
+        return materia;
     }
 
-    public void setMateria1(String materia1) {
-        this.materia1 = materia1;
+    public void setMateria(String materia) {
+        this.materia = materia;
     }
 
-    public String getMateria2() {
-        return materia2;
+    public String getClave() {
+        return clave;
     }
 
-    public void setMateria2(String materia2) {
-        this.materia2 = materia2;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 }
