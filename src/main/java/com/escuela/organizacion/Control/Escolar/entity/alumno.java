@@ -28,12 +28,6 @@ public class alumno implements Serializable {
     @Email
     private String email;
 
-    @NotEmpty
-    private String observaciones;
-
-
-
-
     public Long getId() {
         return id;
     }
@@ -64,13 +58,5 @@ public class alumno implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getObservaciones() {
-        return observaciones;
-    }
-
-    public void setObservaciones(String observaciones) {
-        this.observaciones = observaciones;
     }
 }
