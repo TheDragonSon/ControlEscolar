@@ -36,25 +36,16 @@
 
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login" th:action="@{/form}" th:object="${Usuario}" method="post">
-            <h2 class="form-signin-heading">Ingrese Datos del maestro</h2>
-            <br>
-            <h4>Nombre</h4>
-            <input type="text" class="form-control" name="nombre" th:field="*{clave}" placeholder="Ingrese el nombre del maestro" required autofocus="" />
-            <br>
-            <h4>Clave</h4>
-            <input type="text" class="form-control" name="clave" th:field="*{email}" placeholder="Ingrese la clave del maestro" required autofocus="" />
-            <br>
-            <h4>E-mail</h4>
-            <input type="email" class="form-control" id="email" th:field="*{contrasenia}" placeholder="E-mail" required/>
-            <br>
-            <h4>Materia</h4>
-            <input type="text" class="form-control" id="materia" placeholder="Materia impartida" required/>
-            <br>
-            <br>
-            <input type="hidden" th:field="*{id}">
-            <input class="btn btn-lg btn-primary btn-block"  type="submit"></input>
-        </form>
+        <tr th:each="renglon: ${maestro}">
+            <td th:text="${renglon.id}"></td>
+            <td th:text="${renglon.nombre}"></td>
+            <td th:text="${renglon.clave}"></td>
+            <td th:text="${renglon.email}"></td>
+            <td th:text="${renglon.materia}"></td>
+            <!-- "@{/mycontroller/{path}(path=${type})}-->
+            <!--carlos lo dejo así: "@{/form/}+${renglon.id}" -->
+           <!-- <td> <a th:href="@{/form/{idABuscar}(idABuscar=${renglon.id})}" th:text="Editar" class="btn btn-primary btn-xs"> </a></td>-->
+        </tr>
     </div>
 </div>
 </body>
