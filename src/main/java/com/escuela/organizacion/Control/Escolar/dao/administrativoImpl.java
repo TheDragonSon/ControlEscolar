@@ -14,14 +14,5 @@ public class administrativoImpl implements IadministrativoDao{
     @PersistenceContext
     private EntityManager em;
 
-    @Transactional
-    public List login(String clave, String contrasenia) {
 
-
-        return em.createQuery("select u.nombre from usuario u where u.clave like ?1 and contrasenia like ?2")
-                .setParameter(1,clave)
-                .setParameter(2,contrasenia)
-                .getResultList();
-
-    }
 }

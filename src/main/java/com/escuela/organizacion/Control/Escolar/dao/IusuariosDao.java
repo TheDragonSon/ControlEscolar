@@ -12,6 +12,7 @@ public interface IusuariosDao {
     public void save(usuario Usuario);//guardar
     public usuario findOne(Long id); //buscar uno
     public void delete (Long id); //borrar por id
+    public List login (String clave, String contrasenia);
 
 
 

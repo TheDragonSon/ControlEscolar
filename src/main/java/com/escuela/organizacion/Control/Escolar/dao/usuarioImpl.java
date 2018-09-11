@@ -44,4 +44,15 @@ public class usuarioImpl implements  IusuariosDao {
     public void delete(Long id) {
         em.remove(findOne(id));
     }
+
+    @Transactional
+    public List login(String clave, String contrasenia) {
+
+
+        return em.createQuery("select u.clave from usuario u where u.clave like ?1 and contrasenia like ?2")
+                .setParameter(1,clave)
+                .setParameter(2,contrasenia)
+                .getResultList();
+
+    }
 }

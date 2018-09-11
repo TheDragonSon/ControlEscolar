@@ -5,5 +5,5 @@ import java.util.List;
 public interface IadministrativoDao {
 
 
-    public List login (String clave, String contrasenia);
+
 }

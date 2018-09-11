@@ -31,10 +31,10 @@
 </nav>
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login">
+        <form class="form-signin form-login" th:action="@{/}" th:object="${Usuario}" method="post">
             <h2 class="form-signin-heading">Bienvenido al Control Escolar</h2>
-            <input type="text" class="form-control" name="username" placeholder="ID" required="" autofocus=""/>
-            <input type="password" class="form-control" name="password" placeholder="Contraseña" required=""/>
+            <input type="text" th:field="*{clave}" class="form-control" name="username" placeholder="ID" required="" autofocus=""/>
+            <input type="password" th:field="*{contrasenia}" class="form-control" name="password" placeholder="Contraseña" required=""/>
             <label class="checkbox">
                 <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Recordarme
             </label>
