@@ -25,13 +25,13 @@
         <form class="form-signin form-login" th:action="@{/regalumno}" th:object="${alumno}" method="post">
             <h2 class="form-signin-heading">Ingrese los datos del Nuevo Alumno</h2>
             <br>
-            <input type="text" class="form-control" name="username" th:field="*{nombre}" placeholder="Nombre" required
+            <input type="text" class="form-control" name="username" th:field="*{nombre}" placeholder="Ingrese su Nombre" required
                    autofocus=""/>
             <br>
-            <input type="email" class="form-control" name="email" th:field="*{edad}" placeholder="Edad" required
+            <input type="email" class="form-control" name="email" th:field="*{edad}" placeholder="Especifique la Edad" required
                    autofocus=""/>
             <br>
-            <input type="password" class="form-control" id="password" th:field="*{clave}" placeholder="Clave" required/>
+            <input type="password" class="form-control" id="password" th:field="*{clave}" placeholder="Ingrese la Nueva Clave" required/>
             <br>
             <br>
             <input type="hidden" th:field="*{id}">

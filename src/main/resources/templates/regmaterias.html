@@ -21,22 +21,31 @@
         </ul>
     </div>
 </nav>
+
+
+<div class="container">
+    <h2 class="form-signin-heading">Materias</h2>
+    <div class="parent">
+        <tr th:each="renglon: ${materias}">
+            <td th:text="${renglon.id}"></td>
+            <td th:text="${renglon.nombre}"></td>
+            <td><a th:href="@{/form/{idABuscar}(idABuscar=${renglon.id})}" th:text="Editar"
+                   class="btn btn-primary btn-xs"> </a></td>
+        </tr>
+        </form>
+    </div>
+</div>
+
+
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login" th:action="@{/regalumno}" th:object="${alumno}" method="post">
-            <h2 class="form-signin-heading">Ingrese los datos del Nuevo Alumno</h2>
-            <br>
-            <input type="text" class="form-control" name="username" th:field="*{nombre}" placeholder="Nombre" required
-                   autofocus=""/>
-            <br>
-            <input type="email" class="form-control" name="email" th:field="*{edad}" placeholder="Edad" required
-                   autofocus=""/>
-            <br>
-            <input type="password" class="form-control" id="password" th:field="*{clave}" placeholder="Clave" required/>
-            <br>
-            <br>
-            <input type="hidden" th:field="*{id}">
-            <input class="btn btn-lg btn-primary btn-block" type="submit">Registrar Nuevo Alumno </input>
+        <h2 class="form-signin-heading">Grupos</h2>
+        <tr th:each="renglon: ${grupos}">
+            <td th:text="${renglon.id}"></td>
+            <td th:text="${renglon.grupo}"></td>
+            <td><a th:href="@{/form/{idABuscar}(idABuscar=${renglon.id})}" th:text="Editar"
+                   class="btn btn-primary btn-xs"> </a></td>
+        </tr>
         </form>
     </div>
 </div>
