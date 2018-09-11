@@ -5,10 +5,11 @@ import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "administrativos")
-public class administrativo {
+public class administrativo implements Serializable {
 
     private static final long serialVersionUID=1L;
 

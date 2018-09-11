@@ -6,10 +6,11 @@ package com.escuela.organizacion.Control.Escolar.entity;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "materias")
-public class materia {
+public class materia implements Serializable {
 
     private static final long serialVersionUID=1L;
 

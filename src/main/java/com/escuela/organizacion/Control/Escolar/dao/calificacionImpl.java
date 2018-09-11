@@ -1,6 +1,7 @@
 package com.escuela.organizacion.Control.Escolar.dao;
 
 import com.escuela.organizacion.Control.Escolar.entity.calificacion;
+import com.escuela.organizacion.Control.Escolar.entity.grupo;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
@@ -16,7 +17,7 @@ public class calificacionImpl implements IcalificacionDao {
 
     @Override
     public List<calificacion> findAll() {
-        return null;
+        return em.createQuery("from grupo").getResultList();
     }
 
     @Override
@@ -34,11 +35,12 @@ public class calificacionImpl implements IcalificacionDao {
 
     @Override
     public calificacion findOne(Long id) {
-        return null;
+        return em.find(calificacion.class, id);
     }
 
     @Override
     public void delete(Long id) {
 
+        em.remove(findOne(id));
     }
 }

@@ -3,10 +3,11 @@ package com.escuela.organizacion.Control.Escolar.entity;
 import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "salones")
-public class salon {
+public class salon implements Serializable {
 
     private static final long serialVersionUID=1L;
 
