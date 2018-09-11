@@ -22,8 +22,8 @@ public class calificacionImpl implements IcalificacionDao {
 
     @Override
     public void save(calificacion Calificacion) {
-        System.out.println(Calificacion.getClass());
-        if (Calificacion.getClass() != null && Calificacion.getId() > 0) {
+        System.out.println(Calificacion.getId());
+        if (Calificacion.getId() != null && Calificacion.getId() > 0) {
             em.merge(Calificacion);
 
         } else {
