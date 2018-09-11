@@ -36,20 +36,20 @@
 
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login" th:action="@{/form}" th:object="${Usuario}" method="post">
+        <form class="form-signin form-login" th:action="@{/maestroAux.html}" th:object="${Maestro}" method="post">
             <h2 class="form-signin-heading">Ingrese Datos del maestro</h2>
             <br>
             <h4>Nombre</h4>
-            <input type="text" class="form-control" name="nombre" th:field="*{clave}" placeholder="Ingrese el nombre del maestro" required autofocus="" />
+            <input type="text" class="form-control" name="nombre" th:field="*{nombre}" placeholder="Ingrese el nombre del maestro" required autofocus="" />
             <br>
             <h4>Clave</h4>
-            <input type="text" class="form-control" name="clave" th:field="*{email}" placeholder="Ingrese la clave del maestro" required autofocus="" />
+            <input type="text" class="form-control" name="clave" th:field="*{clave}" placeholder="Ingrese la clave del maestro" required autofocus="" />
             <br>
             <h4>E-mail</h4>
-            <input type="email" class="form-control" id="email" th:field="*{contrasenia}" placeholder="E-mail" required/>
+            <input type="email" class="form-control" id="email" th:field="*{email}" placeholder="E-mail" required/>
             <br>
             <h4>Materia</h4>
-            <input type="text" class="form-control" id="materia" placeholder="Materia impartida" required/>
+            <input type="text" class="form-control" id="materia" th:field="*{materia}" placeholder="Materia impartida" required/>
             <br>
             <br>
             <input type="hidden" th:field="*{id}">

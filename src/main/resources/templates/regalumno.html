@@ -22,7 +22,7 @@
 </nav>
 <div class="container">
     <div class="parent">
-        <form class="form-signin form-login" th:action="@{/regalumno}" th:object="${alumno}" method="post">
+        <form class="form-signin form-login" th:action="@{/regalumno}" th:object="${Alumno}" method="post">
             <h2 class="form-signin-heading">Ingrese los datos del Nuevo Alumno</h2>
             <br>
             <input type="text" class="form-control" name="username" th:field="*{nombre}" placeholder="Nombre" required
